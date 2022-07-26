@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="root">
+       
+        <form class="form">
+            <h1>Generador de contraseñas</h1>
+            <small>Se copia automaticamente al portapapeles</small>
+
+            <h3>Que longitud</h3>
+            <div class="getlong">
+                <input type="button" value="-5" class="sub5">
+                <input type="button" value="-1" class="sub1">
+                <div class="seeLong">10</div>
+                <input type="button" value="+1" class="add1">
+                <input type="button" value="+5" class="add5">
+            </div>
+
+            <h3>Que caracteres usar</h3>
+            <div class="gettypes">
+                <input type="button" value="a-z" class="low check">
+                <input type="button" value="A-Z" class="upp check">
+                <input type="button" value="0-9" class="num check">
+                <input type="button" value="!#%" class="sym check">
+            </div>
+
+            <button>Generar!</button>
+        </form>
+
+        <div class="seeResult">********</div>
+        <div class="alert"></div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
