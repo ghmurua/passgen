@@ -16,6 +16,13 @@ let symBool = true;
 
 let long = 10;
 
+const alert = (msg,time) =>{
+    document.querySelector('.alert').innerHTML = msg;
+    setTimeout(()=>{
+        document.querySelector('.alert').innerHTML = '';
+    },time)
+}
+
 const obtainLong = e => {
     e.preventDefault();
     if (e.target.classList.contains('sub5') && long>12) long = long - 5;
@@ -43,6 +50,15 @@ const generate = e => {
     let result = '';
 
     for ( let i=0; i<long; i++ ) {
+        if (uppBool==false && lowBool==false && 
+            numBool==false && symBool==false)
+            {
+                seeResult.innerHTML = '****';
+                navigator.clipboard.writeText('');
+                alert('ningun caracter seleccionado',2000);
+                break
+            }
+
         let randomType = Math.floor(Math.random()*4);
 
         if (randomType == 0 && lowBool == true) {
@@ -71,11 +87,7 @@ const generate = e => {
 
         navigator.clipboard.writeText(result);
         seeResult.innerHTML = result;
-
-        document.querySelector('.alert').innerHTML = 'copiado!';
-        setTimeout(()=>{
-            document.querySelector('.alert').innerHTML = '';
-        },1000)
+        alert('copiado!',1000);
     }
 }
 
